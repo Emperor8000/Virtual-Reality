@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ToggleEnabled : MonoBehaviour
 {
-    private void toggleEnabled() 
+    public void toggleEnabled() 
     {
         if (gameObject.activeSelf)
         {
