@@ -96,9 +96,9 @@ GameObject:
   - component: {fileID: 2975232202275429468}
   - component: {fileID: 2975232202275429471}
   - component: {fileID: 2975232202275429470}
-  - component: {fileID: 2975232202275429465}
   - component: {fileID: 2975232202275429459}
   - component: {fileID: 2975232202275429458}
+  - component: {fileID: 2975232202275429465}
   m_Layer: 0
   m_Name: DoorWithLock
   m_TagString: Untagged
@@ -186,18 +186,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2975232202275429465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2975232202275429464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e525b2dfe4cc6594ba868ac876c5e4d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &2975232202275429459
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -250,6 +238,19 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &2975232202275429465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2975232202275429464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e525b2dfe4cc6594ba868ac876c5e4d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLocked: 0
 --- !u!1 &2975232203219466077
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,6 +265,7 @@ GameObject:
   - component: {fileID: 2975232203219466065}
   - component: {fileID: 2975232203219466064}
   - component: {fileID: 2975232203219466067}
+  - component: {fileID: 8823003325728751800}
   m_Layer: 0
   m_Name: Handle
   m_TagString: Untagged
@@ -480,6 +482,21 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
+--- !u!138 &8823003325728751800
+FixedJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2975232203219466077}
+  m_ConnectedBody: {fileID: 2975232202275429459}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
 --- !u!1 &7721413828245126710
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,7 +547,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 4294967295
+    m_Bits: 4
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
   m_StartingSelectedInteractable: {fileID: 0}
