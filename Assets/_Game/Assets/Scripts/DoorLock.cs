@@ -5,14 +5,17 @@ using UnityEngine;
 public class DoorLock : MonoBehaviour
 {
     // Start is called before the first frame update
+    [SerializeField] public bool isLocked = false;
     void Start()
     {
-        
+        if (isLocked)
+        {
+            //lock the door
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void unlockDoor()
     {
-        
+        //unlock the door
     }
 }

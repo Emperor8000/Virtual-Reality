@@ -20,7 +20,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &890616637839377866
 RectTransform:
   m_ObjectHideFlags: 0
@@ -547,6 +547,7 @@ GameObject:
   - component: {fileID: 7911202728343344189}
   - component: {fileID: 4687424677398686023}
   - component: {fileID: 841635210735115255}
+  - component: {fileID: 5178772858130747353}
   m_Layer: 0
   m_Name: Reset Scene Button
   m_TagString: Untagged
@@ -656,7 +657,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4687424677398686023}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5178772858130747353}
+        m_TargetAssemblyTypeName: SceneReset, Assembly-CSharp
+        m_MethodName: sceneReset
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5178772858130747353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4736788919824570913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 354445ac6becf414abedcf86a5111ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6119052708865923983
 GameObject:
   m_ObjectHideFlags: 0
