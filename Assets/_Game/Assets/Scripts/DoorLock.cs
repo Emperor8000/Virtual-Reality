@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 [RequireComponent(typeof(Rigidbody))]
 public class DoorLock : MonoBehaviour
@@ -8,6 +9,7 @@ public class DoorLock : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] public bool isLocked = false;
     [SerializeField] public GameObject key = null;
+    [SerializeField] private TeleportationArea areaToUnlock = null;
 
  
     [HideInInspector]public GameObject givenKey = null;
@@ -42,6 +44,11 @@ public class DoorLock : MonoBehaviour
                 keyCollider.enabled = false;
 
                 _rb.isKinematic = false;
+
+                if (areaToUnlock)
+                {
+                    areaToUnlock.enabled = true;
+                }
             }
         }
     }
