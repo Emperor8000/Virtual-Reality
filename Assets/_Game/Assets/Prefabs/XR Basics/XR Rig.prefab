@@ -2267,6 +2267,7 @@ GameObject:
   - component: {fileID: 8686547791464879372}
   - component: {fileID: 8686547791464879362}
   - component: {fileID: 3030972778398988169}
+  - component: {fileID: 1150253862892806175}
   m_Layer: 0
   m_Name: RightHand Controller
   m_TagString: Untagged
@@ -2673,6 +2674,48 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
   OnRelease:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1150253862892806175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8686547791464879370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b126ac7ccc161f84c94d60311733a190, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onStartup:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3883819644155204890}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Toggle, UnityEngine.UI
+        m_MethodName: set_isOn
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 223921805139169438}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  onAwake:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &8686547791610646905
