@@ -252,6 +252,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLocked: 1
   key: {fileID: 0}
+  keyAttach: {fileID: 3945986812899191005}
+  turnKeyPrefab: {fileID: 1991741437745015156, guid: b6a6d29cfc5d7484fb9396405a294f31,
+    type: 3}
   onStart:
     m_PersistentCalls:
       m_Calls:
@@ -297,8 +300,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  turnKeyPrefab: {fileID: 1991741437745015156, guid: b6a6d29cfc5d7484fb9396405a294f31,
-    type: 3}
   currentKeys: []
 --- !u!1 &2975232203219466077
 GameObject:
