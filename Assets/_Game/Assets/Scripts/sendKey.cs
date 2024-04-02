@@ -8,10 +8,18 @@ public class sendKey : MonoBehaviour
 
     private void Start()
     {
-        lockScript = GetComponentInParent<DoorLock>();
+        if (!lockScript)
+        {
+            lockScript = GetComponentInParent<DoorLock>();
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
-        lockScript.givenKey = other.gameObject;
+        lockScript.currentKeys.Add(other.gameObject);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        lockScript.currentKeys.Remove(other.gameObject);
     }
 }

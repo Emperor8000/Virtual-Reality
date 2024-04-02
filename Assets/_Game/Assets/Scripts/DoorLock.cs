@@ -1,53 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.Events;
 
-[RequireComponent(typeof(Rigidbody))]
 public class DoorLock : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] public bool isLocked = false;
     [SerializeField] public GameObject key = null;
-    [SerializeField] private TeleportationArea areaToUnlock = null;
+    [SerializeField] private GameObject turnKeyPrefab = null;
+    [SerializeField] private UnityEvent onStart;
+    [SerializeField] private UnityEvent correctKeyEntered;
+    [SerializeField] public UnityEvent unlock;
 
- 
-    [HideInInspector]public GameObject givenKey = null;
-
-     private Rigidbody _rb = null;
+    [HideInInspector]public List<GameObject> currentKeys = new List<GameObject>();
     void Start()
     {
-        _rb = GetComponent<Rigidbody>();
-
-        if (isLocked)
-        {
-            //lock the door
-            _rb.isKinematic = true;
-        }
-        else
-        {
-            _rb.isKinematic = false;
-        }
+        onStart.Invoke();
     }
 
-    public void unlockDoor()
+    public void keyEntered()
     {
         //unlock the door
-        
-        if (true)
+        foreach(GameObject givenKey in currentKeys)
         {
-            if (givenKey == key)
+            if(givenKey == key)
             {
-                Rigidbody keyRB = givenKey.GetComponent<Rigidbody>();
+                correctKeyEntered.Invoke();
+                Rigidbody keyRB = key.GetComponent<Rigidbody>();
                 keyRB.isKinematic = true;
-                Collider keyCollider = givenKey.GetComponent<Collider>();
+                Collider keyCollider = key.GetComponent<Collider>();
                 keyCollider.enabled = false;
 
-                _rb.isKinematic = false;
-
-                if (areaToUnlock)
+                if (turnKeyPrefab)
                 {
-                    areaToUnlock.enabled = true;
+                    GameObject turnKey = Instantiate(turnKeyPrefab, key.transform);
+                    key.SetActive(false);
+                    TurnKey keyScript = turnKey.GetComponent<TurnKey>();
+                    keyScript.doorLock = this;
                 }
             }
         }
