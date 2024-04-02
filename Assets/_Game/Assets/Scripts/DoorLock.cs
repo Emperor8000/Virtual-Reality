@@ -34,7 +34,10 @@ public class DoorLock : MonoBehaviour
 
                 if (turnKeyPrefab)
                 {
-                    GameObject turnKey = Instantiate(turnKeyPrefab, key.transform);
+                    GameObject turnKey = Instantiate(turnKeyPrefab, key.transform.position, key.transform.rotation);
+                    MeshRenderer turnKeyTexture = turnKey.GetComponentInChildren<MeshRenderer>();
+                    MeshRenderer keyTexture = key.GetComponentInChildren<MeshRenderer>();
+                    turnKeyTexture.material = keyTexture.material;
                     key.SetActive(false);
                     TurnKey keyScript = turnKey.GetComponent<TurnKey>();
                     keyScript.doorLock = this;
