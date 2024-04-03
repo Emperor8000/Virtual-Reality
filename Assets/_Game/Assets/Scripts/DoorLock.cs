@@ -6,7 +6,6 @@ using UnityEngine.Events;
 public class DoorLock : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] public bool isLocked = false;
     [SerializeField] public GameObject key = null;
     [SerializeField] private Transform keyAttach = null;
     [SerializeField] private GameObject turnKeyPrefab = null;
