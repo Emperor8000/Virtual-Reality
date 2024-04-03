@@ -22,11 +22,20 @@ public class GameTimer : MonoBehaviour
     {
         float currentMinutes = Mathf.RoundToInt(currentTime / 60);
         float currentSeconds = Mathf.RoundToInt(currentTime % 60);
-        textField.text = currentMinutes.ToString() + " : " + currentSeconds.ToString();
+        if(currentSeconds >= 10)
+        {
+            textField.text = currentMinutes.ToString() + " : " + currentSeconds.ToString();
+        }
+        else
+        {
+            textField.text = currentMinutes.ToString() + " : 0" + currentSeconds.ToString();
+        }
+        
         currentTime -= Time.deltaTime;
         if(currentTime <= 0)
         {
             timeUp.Invoke();
+            this.enabled = false;
         }
     }
 }
