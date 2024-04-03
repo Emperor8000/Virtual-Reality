@@ -818,7 +818,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 447b2faeeed7ac04a9dbeac61411303e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TotalTime: 0.5
+  TotalTime: 15
   timeUp:
     m_PersistentCalls:
       m_Calls:
