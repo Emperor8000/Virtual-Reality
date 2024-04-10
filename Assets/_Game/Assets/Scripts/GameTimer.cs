@@ -20,7 +20,7 @@ public class GameTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float currentMinutes = Mathf.RoundToInt(currentTime / 60);
+        float currentMinutes = Mathf.FloorToInt(currentTime / 60);
         float currentSeconds = Mathf.RoundToInt(currentTime % 60);
         if(currentSeconds >= 10)
         {
