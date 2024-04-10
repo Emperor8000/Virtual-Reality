@@ -136,6 +136,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SmashBox 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5509200431858570842, guid: 9ff7de1ab2163ef4a9d065433a944296,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8124081022031946070, guid: 9ff7de1ab2163ef4a9d065433a944296,
         type: 3}
       propertyPath: m_RootOrder
@@ -2637,7 +2642,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 32231588f04801b49a458f6a033c0f56, type: 2}
+      objectReference: {fileID: 2100000, guid: fe4533da373755342988598caf8af208, type: 2}
     - target: {fileID: 7763344963005932269, guid: d7a2133cf2b481544a9383f122e3815f,
         type: 3}
       propertyPath: m_Enabled

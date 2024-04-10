@@ -4,31 +4,40 @@ using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
 
-[RequireComponent(typeof(TextMeshProUGUI))]
+
 public class GameTimer : MonoBehaviour
 {
-    [SerializeField] [Tooltip ("Time in minutes until game over")] private float TotalTime = 15f;
+    [SerializeField] [Tooltip ("Time in minutes until timer ends")] private float TotalTime = 15f;
     [SerializeField] private UnityEvent timeUp;
     [SerializeField] private TextMeshProUGUI textField;
+    private bool textDisplay = false;
 
     [HideInInspector] public float currentTime = 0f;
     void Start()
     {
         currentTime = TotalTime * 60;
+        if (textField)
+        {
+            textDisplay = true;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        float currentMinutes = Mathf.FloorToInt(currentTime / 60);
-        float currentSeconds = Mathf.RoundToInt(currentTime % 60);
-        if(currentSeconds >= 10)
+        if (textDisplay)
         {
-            textField.text = currentMinutes.ToString() + " : " + currentSeconds.ToString();
-        }
-        else
-        {
-            textField.text = currentMinutes.ToString() + " : 0" + currentSeconds.ToString();
+            float currentMinutes = Mathf.FloorToInt(currentTime / 60);
+            float currentSeconds = Mathf.RoundToInt(currentTime % 60);
+
+            if (currentSeconds >= 10)
+            {
+                textField.text = currentMinutes.ToString() + " : " + currentSeconds.ToString();
+            }
+            else
+            {
+                textField.text = currentMinutes.ToString() + " : 0" + currentSeconds.ToString();
+            }
         }
         
         currentTime -= Time.deltaTime;
