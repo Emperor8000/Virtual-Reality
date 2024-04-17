@@ -1822,6 +1822,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Steps:
+  - 'You''re in a broken submarine: you need to find and pull the reactor override
+    before time''s up!'
   - 'Optional Step: Use the lever to deactivate the alarm sound'
   - Find the key to the reactor room
   - Find the emergency fire axe
@@ -1829,6 +1831,7 @@ MonoBehaviour:
   - Use the keys to activate the two override locks
   - Pull the override lever
   Hints:
+  - The reactor override lever is in the other room
   - The lever should be on the side walls
   - There's only one correct key for each lock
   - Check the cabinet
