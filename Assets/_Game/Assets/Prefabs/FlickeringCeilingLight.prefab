@@ -47,7 +47,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 5
-  m_Range: 2.4588609
+  m_Range: 2.7
   m_SpotAngle: 77.24287
   m_InnerSpotAngle: 69.04493
   m_CookieSize: 10
@@ -129,5 +129,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxIntensity: 5
-  MinIntensity: 1
-  MaxVariance: 0.2
+  MinIntensity: 2
+  MaxVariance: 0.5
